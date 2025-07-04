@@ -1,0 +1,22 @@
+// {
+//   "extends": "next/core-web-vitals"
+// }
+
+
+{
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:import/recommended"],
+  "plugins": ["import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-unresolved": "error",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": "warn"
+  }
+}
