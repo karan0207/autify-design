@@ -1,14 +1,13 @@
-import { SignedIn, SignIn, UserButton, useUser } from '@clerk/nextjs'
 import { MenuIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import { toast } from 'sonner'
+import React, { useState } from 'react'
 
-import { Button } from '@/components/ui/button';
+import CustomAlert from './custom-alert'
 
 const Navbar = () => {
- 
+  const [showAlert, setShowAlert] = useState(false)
+  const [showEnterpriseAlert, setShowEnterpriseAlert] = useState(false)
   
   return (
     <header className="fixed right-0 left-0 top-0 py-4 px-6 bg-black/40 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
@@ -26,10 +25,10 @@ const Navbar = () => {
       <nav className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block text-md">
         <ul className="flex items-center gap-4 list-none">
           <li className='hover:text-[#a18cd1] text-lg'>
-            <Link href="#">Products</Link>
+            <Link href="/">Products</Link>
           </li>
           <li className='hover:text-[#a18cd1] text-lg'>
-            <Link href="#">Pricing</Link>
+            <Link href="#pricing">Pricing</Link>
           </li>
           {/* <li>
             <Link href="#">Clients</Link>
@@ -38,10 +37,14 @@ const Navbar = () => {
             <Link href="#">Resources</Link>
           </li> */}
           <li className='hover:text-[#a18cd1] text-lg'>
-            <Link href="#">Documentation</Link>
+            <Link href="#" onClick={() => {
+              setShowAlert(true)
+            }}>Documentation</Link>
           </li>
           <li className='hover:text-[#a18cd1] text-lg'>
-            <Link href="#">Enterprise</Link>
+            <Link href="#" onClick={() => {
+              setShowEnterpriseAlert(true)
+            }}>Enterprise</Link>
           </li>
         </ul>
       </nav>
@@ -54,7 +57,7 @@ const Navbar = () => {
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-md font-medium text-white backdrop-blur-3xl ">
             
               <button  className="bg-transparent border-none text-white cursor-pointer">
-                Sign In
+                Coming Soon!
               </button>
           
           </span>
@@ -62,6 +65,20 @@ const Navbar = () => {
        
         <MenuIcon className="md:hidden" />
       </aside>
+      
+      <CustomAlert 
+        isOpen={showAlert}
+        onClose={() => setShowAlert(false)}
+        title="Coming Soon!"
+        message="Documentation is currently under development. We're working hard to bring you comprehensive guides and tutorials. Stay tuned for updates!"
+      />
+      
+      <CustomAlert 
+        isOpen={showEnterpriseAlert}
+        onClose={() => setShowEnterpriseAlert(false)}
+        title="Enterprise Features Coming Soon!"
+        message="Enterprise-grade features are currently under development. We're building advanced solutions for large organizations with enhanced security, scalability, and support. Stay tuned!"
+      />
     </header>
   )
 }

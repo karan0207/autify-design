@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -110,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Lamp and Subscription Section */}
-      <section className="mt-[-500px] px-4 py-12 w-full flex flex-col items-center">
+      <section id="pricing" className="mt-[-500px] px-4 py-12 w-full flex flex-col items-center">
         <LampComponent />
         <SubscriptionCard />
       </section>
