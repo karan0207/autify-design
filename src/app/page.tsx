@@ -27,20 +27,20 @@ export default function Home() {
         <div className="absolute inset-0 h-full w-full flex items-center px-5 py-24 bg-[radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
 
         {/* Container Scroll Section */}
-        <div className="flex flex-col mt-[-60px] md:mt-[-50px] w-full px-2 sm:px-4">
+        <div className="flex flex-col mt-[-60px] md:mt-[-90px] w-full px-2 sm:px-4">
           <ContainerScroll
             titleComponent={
-              <div className="flex items-center flex-col text-center mt-10 md:mt-0 w-full">
+              <div className="flex items-center flex-col text-center mt-10 md:mt-[-20px] w-full">
                 <Button
                   size="lg"
-                  className="w-full max-w-xs sm:max-w-fit p-4 sm:p-8 mb-6 sm:mb-8 text-lg sm:text-2xl rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+                  className="w-full max-w-xs sm:max-w-fit p-4  sm:p-8 mb-6 sm:mb-8 text-lg sm:text-2xl rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600 font-sans group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-black">
                     Get Started
                   </span>
                 </Button>
                 <h1
-                  className="text-2xl xs:text-3xl sm:text-4xl md:text-8xl font-sans font-extrabold tracking-tight leading-tight
+                  className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-sans font-extrabold tracking-tight leading-tight
                     bg-clip-text text-transparent
                     bg-gradient-to-br from-white via-[#a18cd1] to-[#2d006e]
                     drop-shadow-[0_4px_32px_rgba(80,0,120,0.35)]
